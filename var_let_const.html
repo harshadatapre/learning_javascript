@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Var let const</title>
+</head>
+<body>
+    <script>
+        // can declare and initialize
+        var f_name = "Ram";
+        var f_name = "Shyam";  //this value will print
+        document.write(f_name);
+
+        // can initialize only
+        let lname = "Sharma";
+        lname = "Varma";
+        document.write(lname);
+
+        // can't do anything
+        const pi = 3.14;
+        document.write(pi);
+
+    </script>
+
+    <script>
+        function example() {
+            var x = 1;
+            let y = 2;
+            const z = 3;
+
+            if(true) {
+                var x = 10;
+                let y = 20;
+                const z = 30;
+                
+                document.write("<br>");
+                document.write(x + " " + y + " " + z);
+                document.write("<br>");
+            }
+
+            document.write(x + " " + y + " " + z);
+        }
+    </script>
+</body>
+</html>
