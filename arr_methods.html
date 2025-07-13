@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Methods</title>
+</head>
+<body>
+    <script>
+        var a = ["Harshada", 23, "Female", "Student"];
+        document.write(a + "<br>");
+
+        a[1] = 22;
+        a[2] = "Male";
+        document.write(a + "<br>");
+
+    </script>
+
+    <!-- sorging and reverse -->
+    <script>
+        var b = ["Ram", "Shyam", "Vaishanvi", "Apeksha", "Srushti"];
+        document.write(b + "<br>");
+        b.sort();
+        document.write(b + "<br>");
+        b.reverse();
+        document.write(b + "<br>");
+    </script>
+
+    <!--push and pop -->
+    <script>
+        var c = ["Ram", "Shyam", "Vaishanvi", "Apeksha", "Srushti"];
+        document.write(c + "<br>");
+        c.pop();
+        c.pop();
+        document.write(c + "<br>");
+        c.push("Harshada");
+        c.push("Harsh");
+        document.write(c + "<br>" + "<br>");
+    </script>
+
+    <!-- shift unshift -->
+    <script>
+        var d = ["Ram", "Shyam", "Vaishanvi", "Apeksha", "Srushti"];
+        document.write(d + "<br>");
+        d.shift();
+        d.shift();
+        document.write(d + "<br>");
+        d.unshift("Harshada");
+        d.unshift("Sakshi");
+        document.write(d + "<br>" + "<br>");
+    </script>
+
+    <!-- concate and join -->
+    <script>
+        var a = ["Harshada", "Varsha", "Nikita", "Rani", "Shravani"];
+        var b = ["Ram", "Shyam", "Vaishanvi", "Apeksha", "Srushti"];
+        var c = ["Atharva", "Ramesh", "Mahesh", "Samiksha", "Shantanu"];
+
+        var d = a.concat(b, c);
+        document.write(d + "<br>");
+
+        var e = d.join(" / ");
+        document.write(e + "<br>" + "<br>");
+    </script>
+</body>
+</html>

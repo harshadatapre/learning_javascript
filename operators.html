@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operators</title>
+</head>
+<body>
+    <script>
+        var a = 17; //+, -, *, /, %, ++, --, **
+        var b = 3;
+        var c = a ** b;
+        c++;
+        c--;
+        c++;
+        c++;
+        c++;
+        document.write(c);
+        document.write("<br>");
+    </script>
+
+    <script>
+        var p = 13;
+        var q = 13;
+        if(p === q) { // checks for datatype and value as well
+            document.write("true");
+        }
+        else {
+            document.write("false");
+        }
+        document.write("<br>");
+    </script>
+
+    <script>
+        var age = 19;
+        if(age >= 18 && age <= 100) {
+            document.write("Eligible for vote");
+        }
+        else {
+            document.write("Not eligible for vote");
+        }
+        document.write("<br>");
+    </script>
+
+    <script>
+        var day = "Sunday";
+        if(day === "Sunday" || day === "Saturday") {
+            document.write("It's weekend");
+        }
+        else {
+            document.write("It's weekend");
+        }
+        document.write("<br>");
+    </script>
+
+    <script>
+        let age1 = 18;
+        let eligible = (age1 >= 18) ? "Eligible" : "Not eligible";
+        document.write(eligible);
+        document.write("<br>");
+    </script>
+</body>
+</html>
