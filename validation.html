@@ -15,36 +15,50 @@
         <section>
             <div class="container m-3">
                 <div class="row">
-                    <div class="col-md-6 border border-body-tertiary">
+                    <div class="col-md-6 border border-body-tertiary"
+                        style="margin-left: 380px;">
                         <h2 class="text-center">Contact Us</h2>
-                        <form class="p-4">
-                            <label for="exampleFormControlInput1"
-                                class="form-label">Name</label>
-                            <input type="text" class="form-control mb-3"
-                                id="exampleFormControlInput1"
-                                placeholder="Your name">
+                        <form class="p-4" onsubmit="return validate()">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1"
+                                    class="form-label">Name</label>
+                                <input type="text" class="form-control mb-3"
+                                    id="name" name="name"
+                                    placeholder="Your name">
+                                <span class="text-danger" id="nameError"></span>
+                            </div>
 
-                            <label for="exampleFormControlInput1"
-                                class="form-label">Email:</label>
-                            <input type="email" class="form-control mb-3"
-                                id="exampleFormControlInput1"
-                                placeholder="Your email">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1"
+                                    class="form-label">Email:</label>
+                                <input type="email" class="form-control mb-3"
+                                    id="email" name="email"
+                                    placeholder="Your email">
+                                <span class="text-danger" id="emailError"></span>
+                            </div>
 
-                            <label for="exampleFormControlInput1"
-                                class="form-label">Mobile Number:</label>
-                            <input type="number" class="form-control mb-3"
-                                id="exampleFormControlInput1"
-                                placeholder="Your mobile number">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1"
+                                    class="form-label">Mobile Number:</label>
+                                <input type="number" class="form-control mb-3"
+                                    id="mobile" name="mobile"
+                                    placeholder="Your mobile number">
+                                <span class="text-danger" id="mobileError"></span>
+                            </div>
 
-                            <label
-                                for="floatingTextarea">Message:</label>
-                            <textarea class="form-control mb-3"
-                                placeholder="Your message"
-                                id="floatingTextarea"></textarea>
+                            <div class="mb-3">
+                                <label
+                                    for="floatingTextarea">Message:</label>
+                                <textarea class="form-control mb-3"
+                                    placeholder="Your message"
+                                    id="message" name="message"></textarea>
+                                <span class="text-danger" id="messageError"></span>
+                            </div>
 
-                            <button type="button"
-                                style="width: 500px;"
-                                class="btn btn-primary">Submit</button>
+                            <div class="text-center mb-3">
+                                <button type="submit"
+                                    class="btn btn-primary">Submit</button>
+                            </div>
 
                         </form>
 
@@ -52,5 +66,64 @@
                 </div>
             </div>
         </section>
+
+        <!-- bootstrap js and dependencies -->
+        <script>
+
+            function validate() {
+                // Get form values
+                const name = document.getElementById("name").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const mobile = document.getElementById("mobile").value.trim();
+                const message = document.getElementById("message").value.trim();
+                
+                // Error spans
+                const nameError = document.getElementById("nameError");
+                const emailError = document.getElementById("emailError");
+                const mobileError = document.getElementById("mobileError");
+                const messageError = document.getElementById("messageError");
+
+                // Clear previous error messages
+                nameError.textContent = "";
+                emailError.textContent = "";
+                mobileError.textContent = "";
+                messageError.textContent = "";
+
+                let isValid = true;
+
+                // Validate fields
+                if(name === "") {
+                    nameError.textContent = "Please enter your name.";
+                    isValid = false;
+                }
+                else if(name.length <= 1) {
+                    nameError.textContent = "Name must be at least 2 char";
+                    isValid = false;
+                }
+
+                if(email === "") {
+                    emailError.textContent = "Please enter your email.";
+                    isValid = false;
+                }
+                else if(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    emailError.textContent = "Please enter a valid email address.";
+                    isValid = false;
+                }
+
+                if(mobile === "") {
+                    mobileError.textContent = "Please enter your mobile number.";
+                    isValid = false;
+                }
+
+                if(message === "") {
+                    messageError.textContent = "Please enter your message.";
+                    isValid = false;
+                }
+
+                if(isValid) alert("Form Submitted Successfully!");
+
+                return isValid; //Prevent from submission if invalid.
+            }
+        </script>
     </body>
 </html>

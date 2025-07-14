@@ -15,56 +15,104 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-md-6">
+                    <div class="col-md-6" style="margin-left:280px;">
                         <h2>Arithmetic Operation Using Function</h2>
-                        <div class="col-md-12 border border-dark p-5">
-                            <div class="mb-3">
-                                <label for="formGroupExampleInput"
-                                    class="form-label" id="num1">Number 1:</label>
-                                <input type="number" class="form-control"
-                                    id="formGroupExampleInput"
-                                    placeholder>
-                            </div>
+                        <form name="myform">
+                            <div
+                                class="col-md-12 border border-dark border-3 p-5">
+                                <div class="mb-3">
+                                    <label for="num1"
+                                        class="form-label">Number 1:</label>
+                                    <input type="number" name="n1" class="form-control"
+                                        id="num1">
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="formGroupExampleInput"
-                                    class="form-label" id="num2">Number 2:</label>
-                                <input type="number" class="form-control"
-                                    id="formGroupExampleInput"
-                                    placeholder>
-                            </div>
+                                <div class="mb-3">
+                                    <label for="num2"
+                                        class="form-label">Number 2:</label>
+                                    <input type="number" name="n2" class="form-control"
+                                        id="num2">
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="formGroupExampleInput"
-                                    class="form-label">Result:</label>
-                                <input type="number" class="form-control"
-                                    id="formGroupExampleInput"
-                                    placeholder disabled>
-                            </div>
+                                <div class="mb-3">
+                                    <label for="result"
+                                        class="form-label">Result:</label>
+                                    <input type="number" name="res" class="form-control"
+                                        id="result" disabled>
+                                </div>
 
-                            <div class="text-center">
-                                <button onclick="calculate('+')" type="button"
-                                    class="btn btn-primary">+</button>
-                                <button onclick="calculate('-')"  type="button"
-                                    class="btn btn-primary">-</button>
-                                <button onclick="calculate('*')" type="button"
-                                    class="btn btn-primary">*</button>
-                                <button onclick="calculate('/')" type="button"
-                                    class="btn btn-primary">/</button>
-                            </div>
+                                <div class="text-center">
+                                    <button onclick="add()"
+                                        type="button"
+                                        class="btn btn-primary">+</button>
+                                    <button onclick="sub()"
+                                        type="button"
+                                        class="btn btn-primary">-</button>
+                                    <button onclick="multi()"
+                                        type="button"
+                                        class="btn btn-primary">*</button>
+                                    <button onclick="div()"
+                                        type="button"
+                                        class="btn btn-primary">/</button>
+                                    <button onclick="mod()"
+                                        type="button"
+                                        class="btn btn-primary">%</button>
+                                </div>
 
-                        </div>
+                            </div>
+                        </form>
+
                     </div>
                 </div>
             </div>
         </section>
         <!-- script -->
         <script>
-            function addition(num1, num2) {
-                let result = num1 + num2;
-                return result;
+            var a, b, result;
+
+            // way 1
+            function add() {
+                a = Number(document.myform.n1.value);
+                b = Number(document.myform.n2.value);
+                result = a + b;
+                
+                document.myform.res.value = result.toFixed(2);
             }
-            addition();
+
+            // way 2
+            function sub() {
+                a = document.getElementById("num1").value;
+                b = document.getElementById("num2").value;
+                result = a - b;
+                
+                document.getElementById("result").value = result.toFixed(2);
+            }
+
+            // way 3
+            function multi() {
+                a = parseInt(document.myform.n1.value);
+                b = parseInt(document.myform.n2.value);
+                result = a * b;
+                
+                document.myform.res.value = result.toFixed(2);
+            }
+
+            function div() {
+                a = Number(document.myform.n1.value);
+                b = Number(document.myform.n2.value);
+                result = a / b;
+                
+                document.myform.res.value = result.toFixed(2);
+            }
+
+            function mod() {
+                a = Number(document.myform.n1.value);
+                b = Number(document.myform.n2.value);
+                result = a % b;
+                
+                document.myform.res.value = result.toFixed(2);
+            }
+            
         </script>
     </body>
 </html>
